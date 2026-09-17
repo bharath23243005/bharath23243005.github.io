@@ -1,327 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bharath P | AI & Data Science Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<title>Bharath P | AI & Data Science Engineer</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f5f7fb;
-            color: #222;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        header {
-            background: #111827;
-            color: white;
-            padding: 70px 20px;
-            text-align: center;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b1120;
+    color:#e5e7eb;
+    line-height:1.6;
+}
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+header{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#0f172a,#172554,#111827);
+}
 
-        header p {
-            font-size: 20px;
-            color: #d1d5db;
-        }
+.hero{
+    max-width:850px;
+}
 
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            z-index: 10;
-        }
+.hero h1{
+    font-size:55px;
+    margin-bottom:12px;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #111827;
-            margin: 0 12px;
-            font-weight: bold;
-        }
+.hero h1 span{
+    color:#38bdf8;
+}
 
-        nav a:hover {
-            color: #2563eb;
-        }
+.hero h2{
+    font-size:25px;
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 55px 20px;
-        }
+.hero p{
+    color:#94a3b8;
+    max-width:650px;
+    margin:auto;
+    font-size:17px;
+}
 
-        h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #111827;
-        }
+.buttons{
+    margin-top:30px;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    margin:6px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    background:#38bdf8;
+    color:#07111f;
+    transition:.3s;
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.btn:hover{
+    transform:translateY(-3px);
+    opacity:.85;
+}
 
-        .skill {
-            background: #e5e7eb;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+.btn-outline{
+    background:transparent;
+    color:#38bdf8;
+    border:1px solid #38bdf8;
+}
 
-        ul {
-            padding-left: 20px;
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#0f172a;
+    border-bottom:1px solid #1e293b;
+    padding:15px;
+    text-align:center;
+}
 
-        .buttons {
-            margin-top: 25px;
-        }
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:14px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            margin: 5px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+section{
+    max-width:1050px;
+    margin:auto;
+    padding:70px 20px;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
-            }
-        }
-    </style>
+.section-title h2{
+    font-size:32px;
+    color:#f8fafc;
+}
+
+.section-title p{
+    color:#64748b;
+    margin-top:8px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:14px;
+    padding:28px;
+    margin-bottom:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    padding:9px 15px;
+    border-radius:20px;
+    background:#172554;
+    border:1px solid #1e40af;
+    color:#bfdbfe;
+    font-size:14px;
+}
+
+ul{
+    padding-left:20px;
+    color:#cbd5e1;
+}
+
+li{
+    margin:8px 0;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:15px;
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    background:#070d18;
+    color:#64748b;
+    border-top:1px solid #1e293b;
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:0 7px;
+    }
+
+    section{
+        padding:50px 15px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Bharath P</h1>
-    <p>Artificial Intelligence & Data Science Engineer</p>
+<div class="hero">
 
-    <div class="buttons">
-        <a class="btn" href="https://github.com/bharath23243005" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/bharath-p-18892a432" target="_blank">LinkedIn</a>
-    </div>
+<h1>Hi, I'm <span>Bharath P</span></h1>
+
+<h2>Artificial Intelligence & Data Science Engineer</h2>
+
+<p>
+B.Tech AI & Data Science student passionate about
+Artificial Intelligence, Machine Learning and solving
+real-world problems using data-driven solutions.
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="https://github.com/bharath23243005"
+target="_blank">
+GitHub
+</a>
+
+<a class="btn btn-outline"
+href="https://www.linkedin.com/in/bharath-p-18892a432"
+target="_blank">
+LinkedIn
+</a>
+
+<a class="btn"
+href="#contact">
+Contact Me
+</a>
+
+</div>
+</div>
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#internship">Internship</a>
-    <a href="#projects">Projects</a>
-    <a href="#hackathon">Hackathon</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#internship">Internship</a>
+<a href="#projects">Projects</a>
+<a href="#hackathon">Hackathon</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am a B.Tech Artificial Intelligence and Data Science student
-            with hands-on experience in Python, Machine Learning, Data Science
-            and AI-based application development.
-        </p>
-        <br>
-        <p>
-            I am interested in solving real-world problems using Artificial
-            Intelligence and Machine Learning and continuously improving my
-            technical skills.
-        </p>
-    </div>
+
+<div class="section-title">
+<h2>About Me</h2>
+<p>AI & Data Science Enthusiast</p>
+</div>
+
+<div class="card">
+
+<p>
+I am a final-year B.Tech Artificial Intelligence and Data Science
+student at AKT Memorial College of Engineering & Technology.
+I am interested in Machine Learning, Artificial Intelligence,
+Data Analysis and practical application development.
+</p>
+
+<br>
+
+<p>
+I enjoy learning new technologies, working in teams and developing
+solutions for real-world problems using AI and Machine Learning.
+</p>
+
+</div>
 </section>
+
 
 <section id="education">
-    <h2>Education</h2>
 
-    <div class="card">
-        <h3>B.Tech – Artificial Intelligence and Data Science</h3>
-        <p>AKT Memorial College of Engineering and Technology, Kallakurichi</p>
-        <p>Anna University | 2023 – 2027</p>
-        <p><strong>CGPA: 8.1/10 (up to 6th Semester)</strong></p>
-    </div>
+<div class="section-title">
+<h2>Education</h2>
+<p>My academic journey</p>
+</div>
 
-    <div class="card">
-        <h3>Higher Secondary – 12th</h3>
-        <p>Boys Government Higher Secondary School</p>
-        <p>Biology Group | 2022 – 2023</p>
-        <p><strong>Percentage: 85%</strong></p>
-    </div>
+<div class="grid">
 
-    <div class="card">
-        <h3>SSLC – 10th</h3>
-        <p>Boys Government Higher Secondary School</p>
-        <p>2020 – 2021</p>
-    </div>
+<div class="card">
+<h3>B.Tech – Artificial Intelligence & Data Science</h3>
+<p>AKT Memorial College of Engineering & Technology</p>
+<p>Anna University | 2023 – 2027</p>
+<p><strong>CGPA: 8.1/10 (up to 6th Semester)</strong></p>
+</div>
+
+<div class="card">
+<h3>Higher Secondary – 12th</h3>
+<p>Boys Government Higher Secondary School</p>
+<p>Biology Group | 2022 – 2023</p>
+<p><strong>Percentage: 85%</strong></p>
+</div>
+
+<div class="card">
+<h3>SSLC – 10th</h3>
+<p>Boys Government Higher Secondary School</p>
+<p>2020 – 2021</p>
+</div>
+
+</div>
 </section>
+
 
 <section id="skills">
-    <h2>Technical Skills</h2>
 
-    <div class="card">
-        <div class="skills">
-            <span class="skill">Python</span>
-            <span class="skill">Java Basics</span>
-            <span class="skill">Machine Learning</span>
-            <span class="skill">Deep Learning</span>
-            <span class="skill">Artificial Intelligence</span>
-            <span class="skill">Pandas</span>
-            <span class="skill">NumPy</span>
-            <span class="skill">Matplotlib</span>
-            <span class="skill">Scikit-learn</span>
-            <span class="skill">TensorFlow</span>
-            <span class="skill">Keras</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Streamlit</span>
-            <span class="skill">Flask</span>
-            <span class="skill">Gradio</span>
-            <span class="skill">Git</span>
-            <span class="skill">GitHub</span>
-            <span class="skill">Google Cloud</span>
-        </div>
-    </div>
+<div class="section-title">
+<h2>Technical Skills</h2>
+<p>Technologies and tools I work with</p>
+</div>
+
+<div class="card">
+
+<div class="skills">
+
+<span class="skill">Python</span>
+<span class="skill">Java Basics</span>
+<span class="skill">Machine Learning</span>
+<span class="skill">Deep Learning</span>
+<span class="skill">Artificial Intelligence</span>
+<span class="skill">Pandas</span>
+<span class="skill">NumPy</span>
+<span class="skill">Scikit-learn</span>
+<span class="skill">OpenCV</span>
+<span class="skill">Data Analysis</span>
+<span class="skill">Data Preprocessing</span>
+<span class="skill">Feature Selection</span>
+<span class="skill">Streamlit</span>
+<span class="skill">Gradio</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">Power BI</span>
+<span class="skill">Excel</span>
+
+</div>
+</div>
 </section>
+
 
 <section id="internship">
-    <h2>Internship</h2>
 
-    <div class="card">
-        <h3>SAMCORE – Machine Learning Intern</h3>
+<div class="section-title">
+<h2>Internship</h2>
+<p>Practical experience</p>
+</div>
 
-        <ul>
-            <li>Applied Python and Machine Learning techniques to practical datasets.</li>
-            <li>Performed data preprocessing, model building, training and evaluation.</li>
-            <li>Gained hands-on experience with practical Machine Learning workflows.</li>
-        </ul>
-    </div>
+<div class="card">
+
+<h3>Machine Learning Intern – Samcore</h3>
+
+<ul>
+<li>Gained practical exposure to Machine Learning concepts and workflows.</li>
+<li>Worked with Python and machine learning techniques on practical problems.</li>
+<li>Learned data preprocessing, model development and evaluation.</li>
+</ul>
+
+</div>
 </section>
+
 
 <section id="projects">
-    <h2>Projects</h2>
 
-    <div class="card">
-        <h3>AI-Powered Disease Prediction System</h3>
-        <p><strong>Technologies:</strong> Python | Machine Learning | Scikit-learn | Streamlit</p>
-        <br>
-        <ul>
-            <li>Developed a machine learning system to predict possible diseases using patient health data.</li>
-            <li>Performed data preprocessing and classification techniques for disease prediction.</li>
-        </ul>
-    </div>
+<div class="section-title">
+<h2>Projects</h2>
+<p>Academic and personal projects</p>
+</div>
 
-    <div class="card">
-        <h3>Naan Mudhalvan – Mini Project</h3>
-        <p><strong>Transforming Healthcare with AI-Powered Disease Prediction Based on Patient Data</strong></p>
-        <br>
-        <ul>
-            <li>Developed an AI/ML-based healthcare prediction system using patient health data.</li>
-            <li>Applied data preprocessing and machine learning classification techniques.</li>
-        </ul>
-    </div>
+<div class="grid">
+
+<div class="card">
+
+<h3>AI-Powered Disease Prediction System</h3>
+
+<p>
+Transforming Healthcare with AI-Powered Disease Prediction
+Based on Patient Data.
+</p>
+
+<br>
+
+<ul>
+<li>Developed an AI/ML-based healthcare prediction system.</li>
+<li>Applied data preprocessing and classification techniques
+for disease prediction.</li>
+</ul>
+
+<a class="project-link"
+href="https://github.com/bharath23243005"
+target="_blank">
+View on GitHub →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>AI-Based Session Hijacking Detection System</h3>
+
+<ul>
+<li>Designed an AI-based approach for detecting suspicious
+session activities.</li>
+<li>Focused on identifying unauthorized access and security threats.</li>
+</ul>
+
+<a class="project-link"
+href="https://github.com/bharath23243005"
+target="_blank">
+View Projects →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>AI-Powered Plant Disease Identification</h3>
+
+<ul>
+<li>Developed an AI-based approach for identifying plant
+diseases from leaf images.</li>
+<li>Used image processing and machine learning concepts.</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>Personalized Movie Recommendation System</h3>
+
+<ul>
+<li>Built a recommendation system using movie rating data.</li>
+<li>Developed an interactive interface using Gradio.</li>
+</ul>
+
+</div>
+
+</div>
 </section>
+
 
 <section id="hackathon">
-    <h2>Hackathon</h2>
 
-    <div class="card">
-        <h3>Nimirnthu Nil Hackathon – EDII-TN</h3>
-        <p><strong>Project:</strong> Newborn Baby Monitoring & Hospital Visit Management System</p>
-        <br>
+<div class="section-title">
+<h2>Hackathon</h2>
+<p>Innovation and teamwork</p>
+</div>
 
-        <ul>
-            <li>Participated as a team member and cleared three rounds of shortlisting.</li>
-            <li>Developed an AI-powered healthcare platform for newborn monitoring and hospital visit management.</li>
-        </ul>
-    </div>
+<div class="card">
+
+<h3>Nimirnthu Nil Hackathon – EDII-TN</h3>
+
+<p>
+<strong>Project:</strong>
+Newborn Baby Monitoring & Hospital Visit Management System
+</p>
+
+<br>
+
+<ul>
+<li>Participated as a team member and successfully cleared
+three rounds of shortlisting.</li>
+
+<li>Worked on an AI-powered healthcare platform for newborn
+monitoring and hospital visit management.</li>
+
+<li>Platform features included appointment booking,
+queue tracking, health reports, reminders and voice assistance.</li>
+</ul>
+
+</div>
 </section>
+
 
 <section id="certificates">
-    <h2>Certifications & Achievements</h2>
 
-    <div class="card">
-        <ul>
-            <li>Oracle Cloud Infrastructure 2025 Certified Foundations Associate</li>
-            <li>Google Cloud Engineering Certificate</li>
-            <li>Cisco – Introduction to Cybersecurity</li>
-            <li>Cloud Computing Fundamentals – Infosys Springboard</li>
-            <li>Python for Beginners – Infosys Springboard</li>
-            <li>Naan Mudhalvan Certification</li>
-            <li>AI & Machine Learning Training</li>
-            <li>ATAL Workshop – AI/Technology</li>
-            <li>National Level Symposium – Participant</li>
-            <li>National & International Conference – Participant</li>
-            <li>Copyright Registration – Application No: LD-39325/2025-CO</li>
-        </ul>
-    </div>
+<div class="section-title">
+<h2>Certifications & Achievements</h2>
+<p>Continuous learning and professional development</p>
+</div>
+
+<div class="card">
+
+<ul>
+<li>Google Cloud Engineering Certificate</li>
+<li>Cisco Cyber Security Course</li>
+<li>Naan Mudhalvan Certification</li>
+<li>Oracle Certification</li>
+<li>UI/UX Certification</li>
+<li>Machine Learning Course</li>
+<li>ATAL Workshop</li>
+<li>National Level Symposium</li>
+<li>International Level Conference</li>
+<li>National & International Conferences</li>
+<li>Copyright Registration Application – LD-39325/2025-CO</li>
+</ul>
+
+</div>
 </section>
+
 
 <section id="contact">
-    <h2>Contact</h2>
 
-    <div class="card">
-        <p><strong>Email:</strong> bharathperiyasamyofficial@gmail.com</p>
-        <p><strong>Location:</strong> Kallakurichi, Tamil Nadu</p>
+<div class="section-title">
+<h2>Let's Connect</h2>
+<p>Feel free to connect with me</p>
+</div>
 
-        <div class="buttons">
-            <a class="btn" href="mailto:bharathperiyasamyofficial@gmail.com">
-                Email Me
-            </a>
+<div class="card contact">
 
-            <a class="btn"
-               href="https://github.com/bharath23243005"
-               target="_blank">
-                GitHub
-            </a>
+<p><strong>Location:</strong> Kallakurichi, Tamil Nadu</p>
 
-            <a class="btn"
-               href="https://www.linkedin.com/in/bharath-p-18892a432"
-               target="_blank">
-                LinkedIn
-            </a>
-        </div>
-    </div>
+<div class="buttons">
+
+<a class="btn"
+href="https://github.com/bharath23243005"
+target="_blank">
+GitHub
+</a>
+
+<a class="btn btn-outline"
+href="https://www.linkedin.com/in/bharath-p-18892a432"
+target="_blank">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
 </section>
 
+
 <footer>
-    <p>© 2026 Bharath P | Artificial Intelligence & Data Science Engineer</p>
+
+<p>
+© 2026 Bharath P | Artificial Intelligence & Data Science Engineer
+</p>
+
 </footer>
 
 </body>
