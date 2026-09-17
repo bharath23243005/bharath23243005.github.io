@@ -16,27 +16,100 @@
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#0b1120;
+    background:#07111f;
     color:#e5e7eb;
     line-height:1.6;
+    overflow-x:hidden;
 }
 
-header{
-    min-height:90vh;
+body:before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#2563eb;
+    filter:blur(140px);
+    opacity:.15;
+    top:10%;
+    left:-100px;
+    z-index:-1;
+    animation:float 8s infinite alternate;
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:#06b6d4;
+    filter:blur(130px);
+    opacity:.12;
+    bottom:5%;
+    right:-80px;
+    z-index:-1;
+    animation:float2 10s infinite alternate;
+}
+
+@keyframes float{
+    from{transform:translateY(0)}
+    to{transform:translateY(80px)}
+}
+
+@keyframes float2{
+    from{transform:translateY(0)}
+    to{transform:translateY(-80px)}
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,17,31,.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #1e293b;
+    padding:16px 20px;
+    text-align:center;
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin:0 13px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:92vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     padding:40px 20px;
-    background:linear-gradient(135deg,#0f172a,#172554,#111827);
 }
 
-.hero{
+.hero-content{
     max-width:850px;
+    animation:heroIn 1.2s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .hero h1{
-    font-size:55px;
+    font-size:60px;
     margin-bottom:12px;
 }
 
@@ -46,15 +119,30 @@ header{
 
 .hero h2{
     font-size:25px;
-    color:#cbd5e1;
+    color:#94a3b8;
     margin-bottom:20px;
 }
 
 .hero p{
-    color:#94a3b8;
-    max-width:650px;
+    max-width:700px;
     margin:auto;
+    color:#94a3b8;
     font-size:17px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid #1e40af;
+    background:#0f1f3d;
+    color:#60a5fa;
+    border-radius:30px;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{box-shadow:0 0 25px rgba(56,189,248,.25)}
 }
 
 .buttons{
@@ -63,76 +151,73 @@ header{
 
 .btn{
     display:inline-block;
-    padding:12px 22px;
+    padding:12px 23px;
     margin:6px;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
-    background:#38bdf8;
-    color:#07111f;
+    background:#2563eb;
+    color:white;
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    opacity:.85;
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(37,99,235,.35);
 }
 
 .btn-outline{
     background:transparent;
-    color:#38bdf8;
     border:1px solid #38bdf8;
-}
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:#0f172a;
-    border-bottom:1px solid #1e293b;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-    color:#cbd5e1;
-    text-decoration:none;
-    margin:0 12px;
-    font-size:14px;
-}
-
-nav a:hover{
     color:#38bdf8;
 }
 
 section{
     max-width:1050px;
     margin:auto;
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
-.section-title{
+.title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
-.section-title h2{
-    font-size:32px;
-    color:#f8fafc;
+.title h2{
+    font-size:34px;
+    color:white;
 }
 
-.section-title p{
+.title p{
     color:#64748b;
     margin-top:8px;
 }
 
 .card{
-    background:#111827;
+    background:rgba(15,23,42,.8);
     border:1px solid #1e293b;
-    border-radius:14px;
+    border-radius:16px;
     padding:28px;
-    margin-bottom:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    margin-bottom:22px;
+    transition:.4s;
+    animation:fadeUp .8s ease both;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#2563eb;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .card h3{
@@ -147,26 +232,33 @@ section{
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:22px;
 }
 
 .skills{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    justify-content:center;
+    gap:12px;
 }
 
 .skill{
-    padding:9px 15px;
-    border-radius:20px;
-    background:#172554;
+    padding:10px 17px;
+    border-radius:25px;
+    background:#0f2748;
     border:1px solid #1e40af;
     color:#bfdbfe;
-    font-size:14px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:scale(1.08);
+    background:#172554;
+    color:#60a5fa;
 }
 
 ul{
-    padding-left:20px;
+    padding-left:22px;
     color:#cbd5e1;
 }
 
@@ -174,24 +266,47 @@ li{
     margin:8px 0;
 }
 
-.project-link{
-    display:inline-block;
+.project{
+    border-left:4px solid #38bdf8;
+}
+
+.tech{
     margin-top:15px;
-    color:#38bdf8;
-    text-decoration:none;
-    font-weight:bold;
+    color:#60a5fa;
+    font-size:14px;
 }
 
 .contact{
     text-align:center;
 }
 
+.contact p{
+    margin:8px;
+}
+
 footer{
     text-align:center;
     padding:30px 20px;
-    background:#070d18;
+    background:#030712;
     color:#64748b;
     border-top:1px solid #1e293b;
+}
+
+.top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:20px;
+    box-shadow:0 5px 20px rgba(37,99,235,.4);
 }
 
 @media(max-width:700px){
@@ -219,49 +334,13 @@ footer{
     }
 
     section{
-        padding:50px 15px;
+        padding:60px 15px;
     }
 }
 </style>
 </head>
 
 <body>
-
-<header>
-<div class="hero">
-
-<h1>Hi, I'm <span>Bharath P</span></h1>
-
-<h2>Artificial Intelligence & Data Science Engineer</h2>
-
-<p>
-B.Tech AI & Data Science student passionate about
-Artificial Intelligence, Machine Learning and solving
-real-world problems using data-driven solutions.
-</p>
-
-<div class="buttons">
-
-<a class="btn"
-href="https://github.com/bharath23243005"
-target="_blank">
-GitHub
-</a>
-
-<a class="btn btn-outline"
-href="https://www.linkedin.com/in/bharath-p-18892a432"
-target="_blank">
-LinkedIn
-</a>
-
-<a class="btn"
-href="#contact">
-Contact Me
-</a>
-
-</div>
-</div>
-</header>
 
 <nav>
 <a href="#about">About</a>
@@ -274,27 +353,63 @@ Contact Me
 <a href="#contact">Contact</a>
 </nav>
 
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="badge">Available for Opportunities</div>
+
+<h1>Hi, I'm <span>Bharath P</span></h1>
+
+<h2>Artificial Intelligence & Data Science Engineer</h2>
+
+<p>
+Final-year B.Tech AI & Data Science student passionate about
+Artificial Intelligence, Machine Learning and Data Science.
+I enjoy building practical solutions for real-world problems.
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="https://github.com/bharath23243005"
+target="_blank">GitHub</a>
+
+<a class="btn btn-outline"
+href="https://www.linkedin.com/in/bharath-p-18892a432"
+target="_blank">LinkedIn</a>
+
+<a class="btn"
+href="#contact">Contact Me</a>
+
+</div>
+
+</div>
+</header>
+
+
 <section id="about">
 
-<div class="section-title">
+<div class="title">
 <h2>About Me</h2>
-<p>AI & Data Science Enthusiast</p>
+<p>Who I am</p>
 </div>
 
 <div class="card">
 
 <p>
-I am a final-year B.Tech Artificial Intelligence and Data Science
-student at AKT Memorial College of Engineering & Technology.
-I am interested in Machine Learning, Artificial Intelligence,
-Data Analysis and practical application development.
+I am Bharath P, a final-year B.Tech Artificial Intelligence and
+Data Science student at AKT Memorial College of Engineering &
+Technology, Kallakurichi.
 </p>
 
 <br>
 
 <p>
-I enjoy learning new technologies, working in teams and developing
-solutions for real-world problems using AI and Machine Learning.
+My interests include Machine Learning, Artificial Intelligence,
+Data Analysis and AI-based application development. I enjoy
+learning new technologies and working with teams to develop
+practical solutions.
 </p>
 
 </div>
@@ -303,9 +418,9 @@ solutions for real-world problems using AI and Machine Learning.
 
 <section id="education">
 
-<div class="section-title">
+<div class="title">
 <h2>Education</h2>
-<p>My academic journey</p>
+<p>Academic background</p>
 </div>
 
 <div class="grid">
@@ -314,13 +429,13 @@ solutions for real-world problems using AI and Machine Learning.
 <h3>B.Tech – Artificial Intelligence & Data Science</h3>
 <p>AKT Memorial College of Engineering & Technology</p>
 <p>Anna University | 2023 – 2027</p>
-<p><strong>CGPA: 8.1/10 (up to 6th Semester)</strong></p>
+<p><strong>CGPA: 8.1 / 10</strong></p>
 </div>
 
 <div class="card">
-<h3>Higher Secondary – 12th</h3>
+<h3>Higher Secondary – Biology Group</h3>
 <p>Boys Government Higher Secondary School</p>
-<p>Biology Group | 2022 – 2023</p>
+<p>2022 – 2023</p>
 <p><strong>Percentage: 85%</strong></p>
 </div>
 
@@ -336,9 +451,9 @@ solutions for real-world problems using AI and Machine Learning.
 
 <section id="skills">
 
-<div class="section-title">
+<div class="title">
 <h2>Technical Skills</h2>
-<p>Technologies and tools I work with</p>
+<p>My technology stack</p>
 </div>
 
 <div class="card">
@@ -357,12 +472,15 @@ solutions for real-world problems using AI and Machine Learning.
 <span class="skill">Data Analysis</span>
 <span class="skill">Data Preprocessing</span>
 <span class="skill">Feature Selection</span>
+<span class="skill">TensorFlow</span>
+<span class="skill">Keras</span>
+<span class="skill">SQL</span>
+<span class="skill">Power BI</span>
 <span class="skill">Streamlit</span>
 <span class="skill">Gradio</span>
 <span class="skill">Git</span>
 <span class="skill">GitHub</span>
-<span class="skill">Power BI</span>
-<span class="skill">Excel</span>
+<span class="skill">Google Cloud</span>
 
 </div>
 </div>
@@ -371,19 +489,19 @@ solutions for real-world problems using AI and Machine Learning.
 
 <section id="internship">
 
-<div class="section-title">
+<div class="title">
 <h2>Internship</h2>
 <p>Practical experience</p>
 </div>
 
 <div class="card">
 
-<h3>Machine Learning Intern – Samcore</h3>
+<h3>SAMCORE – Machine Learning Intern</h3>
 
 <ul>
-<li>Gained practical exposure to Machine Learning concepts and workflows.</li>
-<li>Worked with Python and machine learning techniques on practical problems.</li>
-<li>Learned data preprocessing, model development and evaluation.</li>
+<li>Completed a one-month internship focused on Machine Learning.</li>
+<li>Worked on practical experiments using Python and Machine Learning concepts.</li>
+<li>Gained exposure to data preprocessing, model development and evaluation.</li>
 </ul>
 
 </div>
@@ -392,91 +510,88 @@ solutions for real-world problems using AI and Machine Learning.
 
 <section id="projects">
 
-<div class="section-title">
+<div class="title">
 <h2>Projects</h2>
-<p>Academic and personal projects</p>
+<p>My technical projects</p>
 </div>
 
-<div class="grid">
 
-<div class="card">
+<div class="card project">
 
-<h3>AI-Powered Disease Prediction System</h3>
+<h3>Transforming Healthcare With AI-Powered Disease Prediction</h3>
 
 <p>
-Transforming Healthcare with AI-Powered Disease Prediction
-Based on Patient Data.
+<strong>Mini Project – Naan Mudhalvan</strong>
 </p>
 
-<br>
+<p>
+Developed an AI/ML-based healthcare prediction system using
+patient health data to support disease prediction.
+</p>
 
-<ul>
-<li>Developed an AI/ML-based healthcare prediction system.</li>
-<li>Applied data preprocessing and classification techniques
-for disease prediction.</li>
-</ul>
-
-<a class="project-link"
-href="https://github.com/bharath23243005"
-target="_blank">
-View on GitHub →
-</a>
+<div class="tech">
+Python • Machine Learning • Random Forest • Decision Tree
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="card project">
 
 <h3>AI-Based Session Hijacking Detection System</h3>
 
-<ul>
-<li>Designed an AI-based approach for detecting suspicious
-session activities.</li>
-<li>Focused on identifying unauthorized access and security threats.</li>
-</ul>
+<p>
+Developed an AI-based security solution to detect suspicious
+session activities and help protect user accounts and sensitive data.
+</p>
 
-<a class="project-link"
-href="https://github.com/bharath23243005"
-target="_blank">
-View Projects →
-</a>
+<div class="tech">
+Python • Machine Learning • Classification
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="card project">
 
 <h3>AI-Powered Plant Disease Identification</h3>
 
-<ul>
-<li>Developed an AI-based approach for identifying plant
-diseases from leaf images.</li>
-<li>Used image processing and machine learning concepts.</li>
-</ul>
+<p>
+Developed an image-based AI solution for identifying plant
+diseases from leaf images using machine learning and image
+processing techniques.
+</p>
+
+<div class="tech">
+Python • Machine Learning • OpenCV
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="card project">
 
 <h3>Personalized Movie Recommendation System</h3>
 
-<ul>
-<li>Built a recommendation system using movie rating data.</li>
-<li>Developed an interactive interface using Gradio.</li>
-</ul>
+<p>
+Built a recommendation system using MovieLens data to provide
+personalized movie suggestions.
+</p>
 
+<div class="tech">
+Python • Machine Learning • Gradio
 </div>
 
 </div>
+
 </section>
 
 
 <section id="hackathon">
 
-<div class="section-title">
+<div class="title">
 <h2>Hackathon</h2>
-<p>Innovation and teamwork</p>
+<p>Innovation & teamwork</p>
 </div>
 
 <div class="card">
@@ -484,8 +599,8 @@ diseases from leaf images.</li>
 <h3>Nimirnthu Nil Hackathon – EDII-TN</h3>
 
 <p>
-<strong>Project:</strong>
-Newborn Baby Monitoring & Hospital Visit Management System
+<strong>Project:</strong> Newborn Baby Monitoring &
+Hospital Visit Management System
 </p>
 
 <br>
@@ -497,8 +612,8 @@ three rounds of shortlisting.</li>
 <li>Worked on an AI-powered healthcare platform for newborn
 monitoring and hospital visit management.</li>
 
-<li>Platform features included appointment booking,
-queue tracking, health reports, reminders and voice assistance.</li>
+<li>Included features such as appointment booking, queue tracking,
+health reports, reminders and voice assistance.</li>
 </ul>
 
 </div>
@@ -507,26 +622,48 @@ queue tracking, health reports, reminders and voice assistance.</li>
 
 <section id="certificates">
 
-<div class="section-title">
+<div class="title">
 <h2>Certifications & Achievements</h2>
-<p>Continuous learning and professional development</p>
+<p>Learning & professional development</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Cloud & Technology</h3>
+<ul>
+<li>Google Cloud Engineering Certificate</li>
+<li>Oracle Cloud Certification</li>
+<li>Google Skills / Cloud Learning Certifications</li>
+</ul>
 </div>
 
 <div class="card">
-
+<h3>Technical Certifications</h3>
 <ul>
-<li>Google Cloud Engineering Certificate</li>
 <li>Cisco Cyber Security Course</li>
-<li>Naan Mudhalvan Certification</li>
-<li>Oracle Certification</li>
-<li>UI/UX Certification</li>
 <li>Machine Learning Course</li>
-<li>ATAL Workshop</li>
+<li>Python Course</li>
+<li>Naan Mudhalvan Certification</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Workshops & Events</h3>
+<ul>
+<li>ATAL Workshop – AI/Technology</li>
 <li>National Level Symposium</li>
 <li>International Level Conference</li>
-<li>National & International Conferences</li>
-<li>Copyright Registration Application – LD-39325/2025-CO</li>
 </ul>
+</div>
+
+<div class="card">
+<h3>Achievement</h3>
+<ul>
+<li>Copyright Registration – Application No. LD-39325/2025-CO</li>
+<li>Nimirnthu Nil Hackathon – Three rounds cleared</li>
+</ul>
+</div>
 
 </div>
 </section>
@@ -534,24 +671,35 @@ queue tracking, health reports, reminders and voice assistance.</li>
 
 <section id="contact">
 
-<div class="section-title">
+<div class="title">
 <h2>Let's Connect</h2>
-<p>Feel free to connect with me</p>
+<p>Feel free to reach out</p>
 </div>
 
 <div class="card contact">
 
-<p><strong>Location:</strong> Kallakurichi, Tamil Nadu</p>
+<h3>Bharath P</h3>
+
+<p>Artificial Intelligence & Data Science Engineer</p>
+
+<p>Kallakurichi, Tamil Nadu</p>
+
+<p>bharathperiyasamyofficial@gmail.com</p>
 
 <div class="buttons">
 
 <a class="btn"
+href="mailto:bharathperiyasamyofficial@gmail.com">
+Email Me
+</a>
+
+<a class="btn btn-outline"
 href="https://github.com/bharath23243005"
 target="_blank">
 GitHub
 </a>
 
-<a class="btn btn-outline"
+<a class="btn"
 href="https://www.linkedin.com/in/bharath-p-18892a432"
 target="_blank">
 LinkedIn
@@ -560,17 +708,18 @@ LinkedIn
 </div>
 
 </div>
-
 </section>
 
 
 <footer>
 
 <p>
-© 2026 Bharath P | Artificial Intelligence & Data Science Engineer
+© 2026 Bharath P | AI & Data Science Engineer
 </p>
 
 </footer>
 
+<a href="#" class="top">↑</a>
+
 </body>
-</html>
+    </html>
