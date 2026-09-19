@@ -3,723 +3,746 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharath P — Artificial Intelligence & Data Science Engineer</title>
+<meta name="description" content="Portfolio of Bharath P, AI & Data Science Engineer — projects, certifications, research and contact.">
 
-<title>Bharath P | AI & Data Science Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+:root{
+  --bg:#060810;
+  --bg-alt:#0a0d18;
+  --glass:rgba(255,255,255,0.045);
+  --glass-strong:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.09);
+  --border-strong:rgba(255,255,255,0.16);
+  --violet:#7c5cfc;
+  --violet-soft:#a48bff;
+  --cyan:#22d3ee;
+  --text:#e9eaf2;
+  --muted:#8b93a8;
+  --muted-dim:#5b6178;
+  --radius-lg:22px;
+  --radius-md:14px;
+  --radius-sm:9px;
+  --maxw:1180px;
+  --ease:cubic-bezier(.16,.8,.24,1);
 }
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#07111f;
-    color:#e5e7eb;
-    line-height:1.6;
-    overflow-x:hidden;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#2563eb;
-    filter:blur(140px);
-    opacity:.15;
-    top:10%;
-    left:-100px;
-    z-index:-1;
-    animation:float 8s infinite alternate;
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    width:300px;
-    height:300px;
-    background:#06b6d4;
-    filter:blur(130px);
-    opacity:.12;
-    bottom:5%;
-    right:-80px;
-    z-index:-1;
-    animation:float2 10s infinite alternate;
-}
-
-@keyframes float{
-    from{transform:translateY(0)}
-    to{transform:translateY(80px)}
-}
-
-@keyframes float2{
-    from{transform:translateY(0)}
-    to{transform:translateY(-80px)}
-}
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(7,17,31,.9);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #1e293b;
-    padding:16px 20px;
-    text-align:center;
-}
-
-nav a{
-    color:#cbd5e1;
-    text-decoration:none;
-    margin:0 13px;
-    font-size:14px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#38bdf8;
-}
-
-.hero{
-    min-height:92vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px 20px;
-}
-
-.hero-content{
-    max-width:850px;
-    animation:heroIn 1.2s ease;
-}
-
-@keyframes heroIn{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.hero h1{
-    font-size:60px;
-    margin-bottom:12px;
-}
-
-.hero h1 span{
-    color:#38bdf8;
-}
-
-.hero h2{
-    font-size:25px;
-    color:#94a3b8;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    color:#94a3b8;
-    font-size:17px;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 16px;
-    border:1px solid #1e40af;
-    background:#0f1f3d;
-    color:#60a5fa;
-    border-radius:30px;
-    margin-bottom:20px;
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    50%{box-shadow:0 0 25px rgba(56,189,248,.25)}
-}
-
-.buttons{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 23px;
-    margin:6px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    background:#2563eb;
-    color:white;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 25px rgba(37,99,235,.35);
-}
-
-.btn-outline{
-    background:transparent;
-    border:1px solid #38bdf8;
-    color:#38bdf8;
-}
-
-section{
-    max-width:1050px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.title h2{
-    font-size:34px;
-    color:white;
-}
-
-.title p{
-    color:#64748b;
-    margin-top:8px;
-}
-
-.card{
-    background:rgba(15,23,42,.8);
-    border:1px solid #1e293b;
-    border-radius:16px;
-    padding:28px;
-    margin-bottom:22px;
-    transition:.4s;
-    animation:fadeUp .8s ease both;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#2563eb;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.card h3{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#cbd5e1;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
-
-.skill{
-    padding:10px 17px;
-    border-radius:25px;
-    background:#0f2748;
-    border:1px solid #1e40af;
-    color:#bfdbfe;
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:scale(1.08);
-    background:#172554;
-    color:#60a5fa;
-}
-
-ul{
-    padding-left:22px;
-    color:#cbd5e1;
-}
-
-li{
-    margin:8px 0;
-}
-
-.project{
-    border-left:4px solid #38bdf8;
-}
-
-.tech{
-    margin-top:15px;
-    color:#60a5fa;
-    font-size:14px;
-}
-
-.contact{
-    text-align:center;
-}
-
-.contact p{
-    margin:8px;
-}
-
-footer{
-    text-align:center;
-    padding:30px 20px;
-    background:#030712;
-    color:#64748b;
-    border-top:1px solid #1e293b;
-}
-
-.top{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#2563eb;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:20px;
-    box-shadow:0 5px 20px rgba(37,99,235,.4);
-}
-
-@media(max-width:700px){
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .hero h2{
-        font-size:20px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    nav{
-        overflow-x:auto;
-        white-space:nowrap;
-    }
-
-    nav a{
-        display:inline-block;
-        margin:0 7px;
-    }
-
-    section{
-        padding:60px 15px;
-    }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk',system-ui,sans-serif;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+button{font-family:inherit;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}}
+::selection{background:var(--violet);color:#fff;}
+:focus-visible{outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px;}
+body::before{content:"";position:fixed; inset:0; z-index:-2;background:radial-gradient(720px 520px at 12% 8%, rgba(124,92,252,0.16), transparent 60%),radial-gradient(640px 480px at 92% 18%, rgba(34,211,238,0.12), transparent 60%),radial-gradient(900px 700px at 50% 100%, rgba(124,92,252,0.08), transparent 60%);}
+body::after{content:"";position:fixed; inset:0; z-index:-1; pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 50% 0%, rgba(0,0,0,0.9), transparent 70%);}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+section{position:relative; padding:128px 0;}
+@media(max-width:720px){section{padding:88px 0;}}
+.eyebrow{font-size:.8rem; color:var(--violet-soft); font-weight:600;letter-spacing:.02em; margin-bottom:14px; display:block;}
+.section-head{max-width:640px; margin-bottom:56px;}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem); font-weight:600; letter-spacing:-.01em; line-height:1.15;}
+.section-head p{color:var(--muted); margin-top:14px; font-size:1.02rem; max-width:560px;}
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+.card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius-md);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);}
+.card:hover{border-color:var(--border-strong);transform:translateY(-4px);box-shadow:0 20px 60px -20px rgba(124,92,252,0.25);}
+.btn{display:inline-flex; align-items:center; gap:8px;padding:13px 26px; border-radius:100px;font-weight:600; font-size:.94rem;border:1px solid var(--border-strong);background:transparent; color:var(--text);cursor:pointer; transition:all .3s var(--ease);white-space:nowrap;}
+.btn:hover{border-color:var(--violet-soft); background:rgba(124,92,252,0.08); transform:translateY(-2px);}
+.btn-primary{background:linear-gradient(135deg,var(--violet),#5b3ff0);border-color:transparent; color:#fff;box-shadow:0 12px 30px -10px rgba(124,92,252,0.55);}
+.btn-primary:hover{box-shadow:0 16px 38px -8px rgba(124,92,252,0.7); transform:translateY(-2px);}
+.btn-ghost{background:transparent; border-color:var(--border);}
+.btn-sm{padding:9px 18px; font-size:.85rem;}
+header{position:fixed; top:0; left:0; right:0; z-index:100;padding:18px 0;transition:background .3s var(--ease), border-color .3s var(--ease), padding .3s var(--ease);border-bottom:1px solid transparent;}
+header.scrolled{background:rgba(6,8,16,0.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--border);padding:12px 0;}
+nav{display:flex; align-items:center; justify-content:space-between;}
+.logo{font-weight:700; font-size:1.12rem; letter-spacing:-.01em;}
+.logo span{color:var(--violet-soft);}
+.nav-links{display:flex; gap:30px; align-items:center;}
+.nav-links a{font-size:.92rem; color:var(--muted); transition:color .25s;}
+.nav-links a:hover{color:var(--text);}
+.nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; z-index:110;}
+.nav-toggle span{width:22px; height:2px; background:var(--text); transition:.3s;}
+.mobile-panel{position:fixed; inset:0 0 0 auto; width:min(78vw,320px); height:100vh;background:#0a0d18; border-left:1px solid var(--border);transform:translateX(100%); transition:transform .4s var(--ease);z-index:105; padding:100px 32px 40px; display:flex; flex-direction:column; gap:22px;}
+.mobile-panel.open{transform:translateX(0);}
+.mobile-panel a{font-size:1.05rem; color:var(--text);}
+.scrim{position:fixed; inset:0; background:rgba(0,0,0,.5); opacity:0; pointer-events:none; transition:opacity .3s; z-index:104;}
+.scrim.show{opacity:1; pointer-events:auto;}
+@media(max-width:860px){.nav-links{display:none;}.nav-toggle{display:flex;}}
+.hero{min-height:100vh; display:flex; align-items:center;padding-top:120px;}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr; text-align:center; gap:48px;}}
+.hero-kicker{display:inline-flex; align-items:center; gap:9px;color:var(--cyan); font-size:.86rem; font-weight:600; margin-bottom:22px;}
+.hero-kicker::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan);}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.4rem); font-weight:700; line-height:1.03; letter-spacing:-.02em;}
+.hero h1 .grad{background:linear-gradient(120deg,var(--violet-soft),var(--cyan));-webkit-background-clip:text; background-clip:text; color:transparent;}
+.hero .role{font-size:clamp(1.05rem,2vw,1.35rem); color:var(--muted); margin-top:18px; font-weight:500;}
+.hero .tagline{margin-top:20px; color:var(--muted); font-size:1.05rem; max-width:480px;}
+@media(max-width:900px){.hero .tagline{margin-inline:auto;}}
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:38px;}
+@media(max-width:900px){.hero-actions{justify-content:center;}}
+.photo-wrap{position:relative; width:300px; height:300px; margin:0 auto;}
+.photo-ring{position:absolute; inset:-14px; border-radius:50%;background:conic-gradient(from 0deg,var(--violet),var(--cyan),transparent 60%,var(--violet));animation:spin 9s linear infinite;filter:blur(1px);}
+.photo-ring::after{content:""; position:absolute; inset:5px; border-radius:50%; background:var(--bg);}
+@keyframes spin{to{transform:rotate(360deg);}}
+.photo-inner{position:absolute; inset:10px; border-radius:50%; overflow:hidden;border:1px solid var(--border-strong);background:linear-gradient(160deg,#171a28,#0c0e18);}
+.photo-inner img{width:100%; height:100%; object-fit:cover; object-position:center top;}
+.photo-fallback{width:100%; height:100%; display:flex; align-items:center; justify-content:center;font-family:'Space Grotesk',sans-serif; font-size:3.2rem; font-weight:600; color:var(--muted-dim);}
+.scroll-cue{position:absolute; bottom:34px; left:50%; transform:translateX(-50%);color:var(--muted-dim); font-size:.78rem; display:flex; flex-direction:column; align-items:center; gap:8px;}
+.scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--muted-dim),transparent); animation:cueMove 2s ease-in-out infinite;}
+@keyframes cueMove{0%,100%{opacity:.2;}50%{opacity:1;}}
+.about-grid{display:grid; grid-template-columns:1.3fr .9fr; gap:52px;}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;}}
+.about-grid p{color:var(--muted); font-size:1.05rem; margin-bottom:16px;}
+.about-grid p strong{color:var(--text);}
+.strengths{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+.chip{padding:9px 16px; border-radius:100px; font-size:.86rem;border:1px solid var(--border); color:var(--muted); background:var(--glass);}
+.about-side{padding:30px; }
+.about-side h4{font-size:.95rem; color:var(--muted); font-weight:600; margin-bottom:16px;}
+.info-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border); font-size:.92rem;}
+.info-row:last-child{border-bottom:none;}
+.info-row span:first-child{color:var(--muted-dim);}
+.timeline{position:relative; padding-left:32px; border-left:1px solid var(--border);}
+.tl-item{position:relative; padding-bottom:44px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{position:absolute; left:-38px; top:4px; width:13px; height:13px; border-radius:50%;background:var(--bg); border:2px solid var(--violet-soft); box-shadow:0 0 0 4px rgba(124,92,252,0.12);}
+.tl-item h3{font-size:1.15rem; font-weight:600;}
+.tl-item .org{color:var(--violet-soft); font-size:.92rem; margin-top:3px;}
+.tl-item .meta{color:var(--muted-dim); font-size:.85rem; margin-top:6px;}
+.tl-item .stat{margin-top:10px; display:inline-block; font-size:.85rem; color:var(--cyan); background:rgba(34,211,238,0.08); padding:5px 12px; border-radius:8px;}
+.skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;}
+.skill-card{padding:26px;}
+.skill-card h4{font-size:1rem; font-weight:600; margin-bottom:14px; display:flex; align-items:center; gap:10px;}
+.skill-card h4::before{content:""; width:8px; height:8px; border-radius:2px; background:linear-gradient(135deg,var(--violet),var(--cyan));}
+.tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+.tag{font-size:.8rem; color:var(--muted); padding:6px 12px; border:1px solid var(--border); border-radius:8px;}
+.exp-card{padding:36px; display:grid; grid-template-columns:1fr; gap:20px;}
+.exp-head{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;}
+.exp-head h3{font-size:1.3rem; font-weight:600;}
+.exp-head .org{color:var(--violet-soft); font-size:.95rem; margin-top:4px;}
+.exp-badge{font-size:.8rem; padding:6px 14px; border-radius:100px; border:1px solid var(--border); color:var(--muted);}
+.exp-list{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:6px;}
+@media(max-width:600px){.exp-list{grid-template-columns:1fr;}}
+.exp-list li{font-size:.92rem; color:var(--muted); padding-left:18px; position:relative;}
+.exp-list li::before{content:""; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:50%; background:var(--cyan);}
+.project-card{padding:40px; position:relative; overflow:hidden;}
+.project-card .glow{position:absolute; width:280px; height:280px; border-radius:50%;background:radial-gradient(circle,rgba(124,92,252,0.22),transparent 70%);top:-100px; right:-100px; pointer-events:none;}
+.project-card h3{font-size:1.5rem; font-weight:600; max-width:520px;}
+.project-card .desc{color:var(--muted); margin-top:14px; max-width:560px; font-size:1rem;}
+.stack-row{display:flex; flex-wrap:wrap; gap:9px; margin-top:22px;}
+.stack-pill{font-size:.8rem; padding:6px 14px; border-radius:100px; background:rgba(124,92,252,0.1); color:var(--violet-soft); border:1px solid rgba(124,92,252,0.25);}
+.project-card .actions{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+.project-split{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+@media(max-width:760px){.project-split{grid-template-columns:1fr;}}
+.project-split .p-info{padding:40px;}
+.project-split .p-visual{background:linear-gradient(160deg,rgba(124,92,252,0.14),rgba(34,211,238,0.08));display:flex; align-items:center; justify-content:center; padding:40px; min-height:220px;border-left:1px solid var(--border);}
+@media(max-width:760px){.project-split .p-visual{border-left:none; border-top:1px solid var(--border);}}
+.pptx-icon{width:76px; height:96px; border-radius:8px; background:linear-gradient(160deg,#d54b2b,#a8341c); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; font-size:.78rem; box-shadow:0 20px 40px -12px rgba(213,75,43,0.5);}
+.hack-card{padding:40px;background:linear-gradient(135deg,rgba(124,92,252,0.1),rgba(34,211,238,0.06));border:1px solid var(--border-strong);display:flex; align-items:center; gap:32px; flex-wrap:wrap;}
+.hack-badge{flex-shrink:0; width:88px; height:88px; border-radius:50%;display:flex; align-items:center; justify-content:center;background:linear-gradient(135deg,var(--violet),var(--cyan));font-family:'Space Grotesk',sans-serif; font-weight:700; color:#0a0d18; font-size:1.6rem;}
+.hack-card h3{font-size:1.3rem; font-weight:600;}
+.hack-card .org{color:var(--muted); margin-top:4px; font-size:.92rem;}
+.hack-card p{color:var(--muted); margin-top:12px; max-width:520px;}
+.round-track{display:flex; gap:6px; margin-top:16px;}
+.round-track span{width:34px; height:6px; border-radius:4px; background:linear-gradient(90deg,var(--violet),var(--cyan));}
+.cert-featured{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; margin-bottom:26px;}
+.cert-card{overflow:hidden;}
+.cert-img{aspect-ratio:4/3; overflow:hidden; background:linear-gradient(160deg,#12141f,#0a0c15);display:flex; align-items:center; justify-content:center; position:relative;}
+.cert-img img{width:100%; height:100%; object-fit:contain; transition:transform .45s var(--ease); padding:14px;}
+.cert-card:hover .cert-img img{transform:scale(1.06);}
+.cert-img .ph{color:var(--muted-dim); font-size:.82rem; text-align:center; padding:20px;}
+.cert-body{padding:20px 22px 24px;}
+.cert-body h4{font-size:1.02rem; font-weight:600; line-height:1.3;}
+.cert-body .issuer{color:var(--violet-soft); font-size:.86rem; margin-top:6px;}
+.cert-body .date{color:var(--muted-dim); font-size:.8rem; margin-top:4px;}
+.cert-body .btn{margin-top:16px;}
+.cert-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;}
+.cert-row{padding:18px 20px; display:flex; justify-content:space-between; align-items:center; gap:12px;}
+.cert-row .t{font-size:.92rem; font-weight:500;}
+.cert-row .d{font-size:.78rem; color:var(--muted-dim); margin-top:3px;}
+.copyright-card{display:grid; grid-template-columns:.9fr 1.1fr; gap:0; overflow:hidden;}
+@media(max-width:800px){.copyright-card{grid-template-columns:1fr;}}
+.copyright-card .cv{background:linear-gradient(160deg,#12141f,#0a0c15); min-height:280px;display:flex; align-items:center; justify-content:center; padding:24px;border-right:1px solid var(--border);}
+@media(max-width:800px){.copyright-card .cv{border-right:none; border-bottom:1px solid var(--border);}}
+.copyright-card .cv img{width:100%; height:100%; object-fit:cover; border-radius:8px;}
+.copyright-card .ci{padding:44px;}
+.copyright-card .ci h3{font-size:1.4rem; font-weight:600;}
+.app-number{margin-top:20px; display:inline-flex; flex-direction:column; gap:4px;padding:14px 18px; border:1px solid var(--border); border-radius:10px; background:rgba(255,255,255,0.02);}
+.app-number .l{font-size:.76rem; color:var(--muted-dim);}
+.app-number .v{font-family:'Space Grotesk',sans-serif; font-size:1.05rem; letter-spacing:.02em; color:var(--cyan);}
+.copyright-card .ci p{color:var(--muted); margin-top:18px;}
+.paper-card{padding:40px; display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;}
+.paper-icon{width:64px; height:80px; border-radius:8px; flex-shrink:0;background:linear-gradient(160deg,#2b2f45,#1a1d2c); border:1px solid var(--border-strong);display:flex; align-items:center; justify-content:center; font-size:1.5rem;}
+.paper-info h3{font-size:1.2rem; font-weight:600;}
+.paper-info .meta{color:var(--muted); font-size:.9rem; margin-top:6px;}
+.paper-info .dept{color:var(--muted-dim); font-size:.84rem; margin-top:4px;}
+.contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;}
+.contact-card{padding:26px; display:flex; flex-direction:column; gap:8px;}
+.contact-card .label{font-size:.78rem; color:var(--muted-dim);}
+.contact-card .value{font-size:1.02rem; font-weight:500; word-break:break-word;}
+.contact-cta{margin-top:44px; text-align:center;}
+.ask-card{padding:0; overflow:hidden;}
+.ask-head{padding:22px 26px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px;}
+.ask-dot{width:9px; height:9px; border-radius:50%; background:var(--cyan); box-shadow:0 0 10px var(--cyan);}
+.ask-head .t{font-weight:600;}
+.ask-head .s{font-size:.78rem; color:var(--muted-dim); margin-left:auto;}
+.ask-body{padding:22px 26px; min-height:120px; display:flex; flex-direction:column; gap:12px;}
+.ask-msg{max-width:88%; padding:12px 16px; border-radius:12px; font-size:.92rem; line-height:1.5;}
+.ask-msg.bot{background:var(--glass-strong); border:1px solid var(--border);}
+.ask-msg.user{background:linear-gradient(135deg,var(--violet),#5b3ff0); color:#fff; margin-left:auto;}
+.ask-suggestions{padding:0 26px 22px; display:flex; flex-wrap:wrap; gap:8px;}
+.ask-suggestions button{font-size:.8rem; padding:8px 14px; border-radius:100px; border:1px solid var(--border);background:transparent; color:var(--muted); cursor:pointer; transition:.25s;}
+.ask-suggestions button:hover{border-color:var(--violet-soft); color:var(--text);}
+footer{padding:56px 0 40px; border-top:1px solid var(--border);}
+.footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+.footer-links{display:flex; gap:20px;}
+.footer-links a{color:var(--muted); font-size:.88rem; transition:color .25s;}
+.footer-links a:hover{color:var(--text);}
+footer .copy{color:var(--muted-dim); font-size:.82rem;}
+.section-divider{height:1px; background:var(--border); max-width:var(--maxw); margin:0 auto;}
 </style>
 </head>
-
 <body>
 
-<nav>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#internship">Internship</a>
-<a href="#projects">Projects</a>
-<a href="#hackathon">Hackathon</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="scrim" id="scrim"></div>
 
-<header class="hero">
-
-<div class="hero-content">
-
-<div class="badge">Available for Opportunities</div>
-
-<h1>Hi, I'm <span>Bharath P</span></h1>
-
-<h2>Artificial Intelligence & Data Science Engineer</h2>
-
-<p>
-Final-year B.Tech AI & Data Science student passionate about
-Artificial Intelligence, Machine Learning and Data Science.
-I enjoy building practical solutions for real-world problems.
-</p>
-
-<div class="buttons">
-
-<a class="btn"
-href="https://github.com/bharath23243005"
-target="_blank">GitHub</a>
-
-<a class="btn btn-outline"
-href="https://www.linkedin.com/in/bharath-p-18892a432"
-target="_blank">LinkedIn</a>
-
-<a class="btn"
-href="#contact">Contact Me</a>
-
-</div>
-
-</div>
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#home" class="logo">Bharath <span>P.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certificates</a>
+      <a href="#conference">Research</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
 
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#internship">Internship</a>
+  <a href="#projects">Projects</a>
+  <a href="#naan-mudhalvan">Naan Mudhalvan</a>
+  <a href="#hackathon">Hackathon</a>
+  <a href="#certifications">Certificates</a>
+  <a href="#copyright">Copyright</a>
+  <a href="#conference">Research Paper</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-kicker">Open to opportunities</span>
+      <h1>Bharath P<br><span class="grad">builds with AI.</span></h1>
+      <p class="role">Artificial Intelligence &amp; Data Science Engineer</p>
+      <p class="tagline">Building practical solutions with Artificial Intelligence, Machine Learning and Data Science.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Project</a>
+        <a href="#certifications" class="btn">View Certificates</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        <a href="assets/Bharath_P_Resume_and_Certificates.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-ring"></div>
+      <div class="photo-inner">
+        <img src="assets/profile.png" alt="Bharath P" loading="eager"
+             onerror="this.parentElement.innerHTML='<div class=&quot;photo-fallback&quot;>BP</div>'">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span>scroll</div>
+</section>
 
 <section id="about">
-
-<div class="title">
-<h2>About Me</h2>
-<p>Who I am</p>
-</div>
-
-<div class="card">
-
-<p>
-I am Bharath P, a final-year B.Tech Artificial Intelligence and
-Data Science student at AKT Memorial College of Engineering &
-Technology, Kallakurichi.
-</p>
-
-<br>
-
-<p>
-My interests include Machine Learning, Artificial Intelligence,
-Data Analysis and AI-based application development. I enjoy
-learning new technologies and working with teams to develop
-practical solutions.
-</p>
-
-</div>
+  <div class="wrap">
+    <div class="reveal about-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 style="margin-bottom:24px;">A final-year engineer learning to make AI useful, not just clever.</h2>
+        <p>I'm a final-year <strong>B.Tech Artificial Intelligence &amp; Data Science</strong> student at AKT Memorial College of Engineering and Technology, based in Kallakurichi, Tamil Nadu.</p>
+        <p>My focus is on <strong>Artificial Intelligence, Machine Learning, Data Science</strong> and practical AI application development — turning models into things people can actually use.</p>
+        <div class="strengths">
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Critical Thinking</span>
+          <span class="chip">Teamwork &amp; Collaboration</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Quick Learning</span>
+          <span class="chip">Adaptability</span>
+          <span class="chip">Time Management</span>
+        </div>
+      </div>
+      <div class="card about-side">
+        <h4>At a glance</h4>
+        <div class="info-row"><span>Based in</span><span>Kallakurichi, TN</span></div>
+        <div class="info-row"><span>Studying</span><span>AI &amp; Data Science</span></div>
+        <div class="info-row"><span>Graduating</span><span>2027</span></div>
+        <div class="info-row"><span>CGPA</span><span>8.1 / 10</span></div>
+        <div class="info-row"><span>Email</span><span style="font-size:.85rem;">bharathperiyasamyofficial@gmail.com</span></div>
+        <div class="info-row"><span>Phone</span><span>+91 89405 72587</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
 
 <section id="education">
-
-<div class="title">
-<h2>Education</h2>
-<p>Academic background</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>B.Tech – Artificial Intelligence & Data Science</h3>
-<p>AKT Memorial College of Engineering & Technology</p>
-<p>Anna University | 2023 – 2027</p>
-<p><strong>CGPA: 8.1 / 10</strong></p>
-</div>
-
-<div class="card">
-<h3>Higher Secondary – Biology Group</h3>
-<p>Boys Government Higher Secondary School</p>
-<p>2022 – 2023</p>
-<p><strong>Percentage: 85%</strong></p>
-</div>
-
-<div class="card">
-<h3>SSLC – 10th</h3>
-<p>Boys Government Higher Secondary School</p>
-<p>2020 – 2021</p>
-</div>
-
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2>Academic path</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+        <div class="org">AKT Memorial College of Engineering and Technology · Anna University</div>
+        <div class="meta">2023 – 2027 · Pursuing</div>
+        <span class="stat">CGPA 8.1 / 10 up to 6th Semester</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Higher Secondary — Biology Group</h3>
+        <div class="org">Boys Government Higher Secondary School</div>
+        <div class="meta">2022 – 2023</div>
+        <span class="stat">85%</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>SSLC</h3>
+        <div class="org">Boys Government Higher Secondary School</div>
+        <div class="meta">2020 – 2021</div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
 
 <section id="skills">
-
-<div class="title">
-<h2>Technical Skills</h2>
-<p>My technology stack</p>
-</div>
-
-<div class="card">
-
-<div class="skills">
-
-<span class="skill">Python</span>
-<span class="skill">Java Basics</span>
-<span class="skill">Machine Learning</span>
-<span class="skill">Deep Learning</span>
-<span class="skill">Artificial Intelligence</span>
-<span class="skill">Pandas</span>
-<span class="skill">NumPy</span>
-<span class="skill">Scikit-learn</span>
-<span class="skill">OpenCV</span>
-<span class="skill">Data Analysis</span>
-<span class="skill">Data Preprocessing</span>
-<span class="skill">Feature Selection</span>
-<span class="skill">TensorFlow</span>
-<span class="skill">Keras</span>
-<span class="skill">SQL</span>
-<span class="skill">Power BI</span>
-<span class="skill">Streamlit</span>
-<span class="skill">Gradio</span>
-<span class="skill">Git</span>
-<span class="skill">GitHub</span>
-<span class="skill">Google Cloud</span>
-
-</div>
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Skills</span>
+      <h2>What I work with</h2>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="card skill-card">
+        <h4>Programming</h4>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Java Basics</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h4>AI &amp; Machine Learning</h4>
+        <div class="tag-row">
+          <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">Prediction Models</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h4>Data Science</h4>
+        <div class="tag-row">
+          <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Data Preprocessing</span><span class="tag">Feature Selection</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h4>Libraries &amp; Frameworks</h4>
+        <div class="tag-row">
+          <span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Streamlit</span><span class="tag">Flask</span><span class="tag">Gradio</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h4>Tools &amp; Platforms</h4>
+        <div class="tag-row">
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Kaggle</span><span class="tag">VS Code</span><span class="tag">Google Cloud</span><span class="tag">Hugging Face Spaces</span><span class="tag">Streamlit Cloud</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
 
 <section id="internship">
-
-<div class="title">
-<h2>Internship</h2>
-<p>Practical experience</p>
-</div>
-
-<div class="card">
-
-<h3>SAMCORE – Machine Learning Intern</h3>
-
-<ul>
-<li>Completed a one-month internship focused on Machine Learning.</li>
-<li>Worked on practical experiments using Python and Machine Learning concepts.</li>
-<li>Gained exposure to data preprocessing, model development and evaluation.</li>
-</ul>
-
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Internship</span>
+      <h2>Applied experience</h2>
+    </div>
+    <div class="card exp-card reveal">
+      <div class="exp-head">
+        <div>
+          <h3>Machine Learning Intern</h3>
+          <div class="org">SAMCORE</div>
+        </div>
+        <span class="exp-badge">Internship</span>
+      </div>
+      <p style="color:var(--muted);">Applied Python and Machine Learning techniques to practical datasets, supporting data preparation and model development.</p>
+      <ul class="exp-list">
+        <li>Data preprocessing</li>
+        <li>Model building</li>
+        <li>Model training</li>
+        <li>Model evaluation</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
 
 <section id="projects">
-
-<div class="title">
-<h2>Projects</h2>
-<p>My technical projects</p>
-</div>
-
-
-<div class="card project">
-
-<h3>Transforming Healthcare With AI-Powered Disease Prediction</h3>
-
-<p>
-<strong>Mini Project – Naan Mudhalvan</strong>
-</p>
-
-<p>
-Developed an AI/ML-based healthcare prediction system using
-patient health data to support disease prediction.
-</p>
-
-<div class="tech">
-Python • Machine Learning • Random Forest • Decision Tree
-</div>
-
-</div>
-
-
-<div class="card project">
-
-<h3>AI-Based Session Hijacking Detection System</h3>
-
-<p>
-Developed an AI-based security solution to detect suspicious
-session activities and help protect user accounts and sensitive data.
-</p>
-
-<div class="tech">
-Python • Machine Learning • Classification
-</div>
-
-</div>
-
-
-<div class="card project">
-
-<h3>AI-Powered Plant Disease Identification</h3>
-
-<p>
-Developed an image-based AI solution for identifying plant
-diseases from leaf images using machine learning and image
-processing techniques.
-</p>
-
-<div class="tech">
-Python • Machine Learning • OpenCV
-</div>
-
-</div>
-
-
-<div class="card project">
-
-<h3>Personalized Movie Recommendation System</h3>
-
-<p>
-Built a recommendation system using MovieLens data to provide
-personalized movie suggestions.
-</p>
-
-<div class="tech">
-Python • Machine Learning • Gradio
-</div>
-
-</div>
-
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Project</span>
+      <h2>Featured work</h2>
+    </div>
+    <div class="card project-card reveal">
+      <div class="glow"></div>
+      <h3>AI-Powered Disease Prediction System</h3>
+      <p class="desc">A Machine Learning system that predicts possible diseases from patient health data — covering preprocessing, model training and a usable prediction interface.</p>
+      <div class="stack-row">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">Machine Learning</span>
+        <span class="stack-pill">Scikit-learn</span>
+        <span class="stack-pill">Streamlit</span>
+      </div>
+      <div class="actions">
+        <a href="https://github.com/bharath23243005" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section id="naan-mudhalvan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Naan Mudhalvan Mini Project</span>
+      <h2>Transforming Healthcare with AI-Powered Disease Prediction</h2>
+      <p>Based on Patient Data</p>
+    </div>
+    <div class="card project-split reveal">
+      <div class="p-info">
+        <h3 style="font-size:1.25rem; font-weight:600;">AI-Based Disease Prediction System</h3>
+        <div class="stack-row">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Pandas</span>
+          <span class="stack-pill">NumPy</span>
+          <span class="stack-pill">Scikit-learn</span>
+        </div>
+        <p style="color:var(--muted); margin-top:18px;">Mini-project developed under the Naan Mudhalvan scheme, applying data-driven disease prediction techniques on patient datasets.</p>
+        <div class="actions" style="margin-top:26px;">
+          <a href="assets/naan-mudhalvan-project.pptx" class="btn btn-primary" target="_blank" rel="noopener">View Project PPT</a>
+        </div>
+      </div>
+      <div class="p-visual">
+        <div class="pptx-icon">PPTX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <section id="hackathon">
-
-<div class="title">
-<h2>Hackathon</h2>
-<p>Innovation & teamwork</p>
-</div>
-
-<div class="card">
-
-<h3>Nimirnthu Nil Hackathon – EDII-TN</h3>
-
-<p>
-<strong>Project:</strong> Newborn Baby Monitoring &
-Hospital Visit Management System
-</p>
-
-<br>
-
-<ul>
-<li>Participated as a team member and successfully cleared
-three rounds of shortlisting.</li>
-
-<li>Worked on an AI-powered healthcare platform for newborn
-monitoring and hospital visit management.</li>
-
-<li>Included features such as appointment booking, queue tracking,
-health reports, reminders and voice assistance.</li>
-</ul>
-
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hackathon</span>
+      <h2>Competitive experience</h2>
+    </div>
+    <div class="hack-card reveal">
+      <div class="hack-badge">EDII</div>
+      <div>
+        <h3>Nimirnthu Nil Hackathon</h3>
+        <div class="org">EDII-TN</div>
+        <p>Participated as a team member and successfully cleared three rounds of shortlisting.</p>
+        <div class="round-track"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
 
-<section id="certificates">
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Certifications</span>
+      <h2>Verified learning</h2>
+      <p>Selected certifications shown as full certificate cards below; the remaining certifications are listed underneath.</p>
+    </div>
 
-<div class="title">
-<h2>Certifications & Achievements</h2>
-<p>Learning & professional development</p>
-</div>
+    <div class="cert-featured reveal">
+      <div class="card cert-card">
+        <div class="cert-img">
+          <img src="certificates/oracle-cloud.png" alt="Oracle Cloud Infrastructure 2025 Certified Foundations Associate certificate"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph&quot;>Certificate image not found.<br>Upload as certificates/oracle-cloud.png</div>'">
+        </div>
+        <div class="cert-body">
+          <h4>Oracle Cloud Infrastructure 2025 Certified Foundations Associate</h4>
+          <div class="issuer">Certificate No. 101661950OCI25FNDCFA</div>
+          <div class="date">Issued May 20, 2025 · Valid to May 20, 2027</div>
+          <a href="certificates/oracle-cloud.png" class="btn btn-sm" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
 
-<div class="grid">
+      <div class="card cert-card">
+        <div class="cert-img">
+          <img src="certificates/cisco-cybersecurity.png" alt="Cisco Introduction to Cybersecurity certificate"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph&quot;>Certificate image not found.<br>Upload as certificates/cisco-cybersecurity.png</div>'">
+        </div>
+        <div class="cert-body">
+          <h4>Introduction to Cybersecurity</h4>
+          <div class="issuer">Cisco Networking Academy</div>
+          <div class="date">Completed 31 July 2025</div>
+          <a href="certificates/cisco-cybersecurity.png" class="btn btn-sm" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Cloud & Technology</h3>
-<ul>
-<li>Google Cloud Engineering Certificate</li>
-<li>Oracle Cloud Certification</li>
-<li>Google Skills / Cloud Learning Certifications</li>
-</ul>
-</div>
+      <div class="card cert-card">
+        <div class="cert-img">
+          <img src="certificates/cloud-computing.png" alt="Cloud Computing Fundamentals certificate"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph&quot;>Certificate image not found.<br>Upload as certificates/cloud-computing.png</div>'">
+        </div>
+        <div class="cert-body">
+          <h4>Cloud Computing Fundamentals</h4>
+          <div class="issuer">Infosys Springboard</div>
+          <div class="date">Completed 29 December 2025</div>
+          <a href="certificates/cloud-computing.png" class="btn btn-sm" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Technical Certifications</h3>
-<ul>
-<li>Cisco Cyber Security Course</li>
-<li>Machine Learning Course</li>
-<li>Python Course</li>
-<li>Naan Mudhalvan Certification</li>
-</ul>
-</div>
+      <div class="card cert-card">
+        <div class="cert-img">
+          <img src="certificates/python-beginners.png" alt="Python for Beginners certificate"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph&quot;>Certificate image not found.<br>Upload as certificates/python-beginners.png</div>'">
+        </div>
+        <div class="cert-body">
+          <h4>Python for Beginners</h4>
+          <div class="issuer">Infosys Springboard</div>
+          <div class="date">Completed 24 December 2025</div>
+          <a href="certificates/python-beginners.png" class="btn btn-sm" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<h3>Workshops & Events</h3>
-<ul>
-<li>ATAL Workshop – AI/Technology</li>
-<li>National Level Symposium</li>
-<li>International Level Conference</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Achievement</h3>
-<ul>
-<li>Copyright Registration – Application No. LD-39325/2025-CO</li>
-<li>Nimirnthu Nil Hackathon – Three rounds cleared</li>
-</ul>
-</div>
-
-</div>
+    <div class="cert-list reveal">
+      <div class="card cert-row">
+        <div>
+          <div class="t">Big Data 101</div>
+          <div class="d">Completed 15 September 2026</div>
+        </div>
+        <a href="certificates/big-data-101.png" class="btn btn-sm" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="card cert-row">
+        <div>
+          <div class="t">Big Data — 301</div>
+          <div class="d">Issued 18 September 2026</div>
+        </div>
+        <a href="certificates/big-data-301.png" class="btn btn-sm" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="card cert-row">
+        <div>
+          <div class="t">Introduction to Soft Skills</div>
+          <div class="d">TCS iON · 16 Jul – 10 Sep 2026</div>
+        </div>
+        <a href="certificates/tcs-soft-skills.png" class="btn btn-sm" target="_blank" rel="noopener">View</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section id="copyright">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Copyright Registration</span>
+      <h2>Registered work</h2>
+    </div>
+    <div class="card copyright-card reveal">
+      <div class="cv">
+        <img src="assets/copyright-certificate.png" alt="Copyright registration certificate, Application No. LD-39325/2025-CO"
+             onerror="this.parentElement.innerHTML='<div class=&quot;ph&quot; style=&quot;color:var(--muted-dim);font-size:.85rem;text-align:center;padding:20px;&quot;>Image not found.<br>Upload as assets/copyright-certificate.png</div>'">
+      </div>
+      <div class="ci">
+        <h3>Copyright Registration</h3>
+        <p>Official copyright application filed for original work developed by Bharath P and team.</p>
+        <div class="app-number">
+          <span class="l">Application Number</span>
+          <span class="v">LD-39325/2025-CO</span>
+        </div>
+        <div class="actions" style="margin-top:24px;">
+          <a href="assets/copyright-document.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Copyright Document</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="conference">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">International Conference Paper</span>
+      <h2>Published research</h2>
+    </div>
+    <div class="card paper-card reveal">
+      <div style="display:flex; gap:22px; align-items:center;">
+        <div class="paper-icon">📄</div>
+        <div class="paper-info">
+          <h3>Cloud Computing</h3>
+          <div class="meta">Authors: Bharath P and team</div>
+          <div class="dept">Department of Artificial Intelligence &amp; Data Science, AKT Memorial College of Engineering and Technology</div>
+        </div>
+      </div>
+      <a href="assets/cloud-computing-paper.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Paper PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="ask-ai">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ask about Bharath</span>
+      <h2>A quick portfolio assistant</h2>
+      <p>This is a simple demo that answers a few predefined questions — not a live AI backend.</p>
+    </div>
+    <div class="card ask-card reveal">
+      <div class="ask-head">
+        <span class="ask-dot"></span>
+        <span class="t">Portfolio Assistant</span>
+        <span class="s">Demo · predefined answers</span>
+      </div>
+      <div class="ask-body" id="askBody">
+        <div class="ask-msg bot">Hi! Ask me about Bharath's skills, education, projects, internship, certificates or contact details.</div>
+      </div>
+      <div class="ask-suggestions" id="askSuggestions">
+        <button data-q="skills">Skills</button>
+        <button data-q="education">Education</button>
+        <button data-q="projects">Projects</button>
+        <button data-q="internship">Internship</button>
+        <button data-q="certificates">Certificates</button>
+        <button data-q="contact">Contact</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <section id="contact">
-
-<div class="title">
-<h2>Let's Connect</h2>
-<p>Feel free to reach out</p>
-</div>
-
-<div class="card contact">
-
-<h3>Bharath P</h3>
-
-<p>Artificial Intelligence & Data Science Engineer</p>
-
-<p>Kallakurichi, Tamil Nadu</p>
-
-<p>bharathperiyasamyofficial@gmail.com</p>
-
-<div class="buttons">
-
-<a class="btn"
-href="mailto:bharathperiyasamyofficial@gmail.com">
-Email Me
-</a>
-
-<a class="btn btn-outline"
-href="https://github.com/bharath23243005"
-target="_blank">
-GitHub
-</a>
-
-<a class="btn"
-href="https://www.linkedin.com/in/bharath-p-18892a432"
-target="_blank">
-LinkedIn
-</a>
-
-</div>
-
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <a href="mailto:bharathperiyasamyofficial@gmail.com" class="card contact-card">
+        <span class="label">Email</span>
+        <span class="value">bharathperiyasamyofficial@gmail.com</span>
+      </a>
+      <a href="tel:+918940572587" class="card contact-card">
+        <span class="label">Phone</span>
+        <span class="value">+91 89405 72587</span>
+      </a>
+      <a href="https://github.com/bharath23243005" target="_blank" rel="noopener" class="card contact-card">
+        <span class="label">GitHub</span>
+        <span class="value">github.com/bharath23243005</span>
+      </a>
+      <a href="https://www.linkedin.com/in/bharath-p-18892a432" target="_blank" rel="noopener" class="card contact-card">
+        <span class="label">LinkedIn</span>
+        <span class="value">linkedin.com/in/bharath-p</span>
+      </a>
+    </div>
+    <div class="contact-cta reveal">
+      <a href="mailto:bharathperiyasamyofficial@gmail.com" class="btn btn-primary">Send an email</a>
+    </div>
+  </div>
 </section>
 
-
 <footer>
-
-<p>
-© 2026 Bharath P | AI & Data Science Engineer
-</p>
-
+  <div class="wrap footer-row">
+    <span class="copy">© 2026 Bharath P. Built with HTML, CSS &amp; JavaScript.</span>
+    <div class="footer-links">
+      <a href="https://github.com/bharath23243005" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/bharath-p-18892a432" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#home">Back to top</a>
+    </div>
+  </div>
 </footer>
 
-<a href="#" class="top">↑</a>
+<script>
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', ()=>{
+  header.classList.toggle('scrolled', window.scrollY > 12);
+}, {passive:true});
 
+const navToggle = document.getElementById('navToggle');
+const mobilePanel = document.getElementById('mobilePanel');
+const scrim = document.getElementById('scrim');
+function toggleMenu(open){
+  mobilePanel.classList.toggle('open', open);
+  scrim.classList.toggle('show', open);
+}
+navToggle.addEventListener('click', ()=> toggleMenu(!mobilePanel.classList.contains('open')));
+scrim.addEventListener('click', ()=> toggleMenu(false));
+mobilePanel.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> toggleMenu(false)));
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=> io.observe(el));
+
+const answers = {
+  skills: "Bharath works with Python, SQL, Machine Learning, Deep Learning, Pandas, NumPy, Scikit-learn, TensorFlow, Keras, Streamlit, Flask and Gradio, using Git, GitHub, Kaggle and Google Cloud.",
+  education: "Bharath is pursuing a B.Tech in Artificial Intelligence & Data Science at AKT Memorial College of Engineering and Technology (2023–2027), with a CGPA of 8.1/10 up to the 6th semester.",
+  projects: "Bharath's main project is an AI-Powered Disease Prediction System built with Python, Scikit-learn and Streamlit. He also completed a Naan Mudhalvan mini-project on AI-based disease prediction.",
+  internship: "Bharath interned at SAMCORE as a Machine Learning Intern, working on data preprocessing, model building, training and evaluation.",
+  certificates: "Bharath holds certifications including Oracle Cloud Infrastructure 2025 Foundations Associate, Cisco Introduction to Cybersecurity, Cloud Computing Fundamentals, and Python for Beginners, among others — see the Certifications section for the full list.",
+  contact: "You can reach Bharath at bharathperiyasamyofficial@gmail.com or +91 89405 72587, or connect via GitHub and LinkedIn linked in the Contact section."
+};
+const askBody = document.getElementById('askBody');
+document.getElementById('askSuggestions').addEventListener('click', (e)=>{
+  const btn = e.target.closest('button[data-q]');
+  if(!btn) return;
+  const key = btn.dataset.q;
+  const userMsg = document.createElement('div');
+  userMsg.className = 'ask-msg user';
+  userMsg.textContent = btn.textContent;
+  askBody.appendChild(userMsg);
+  const botMsg = document.createElement('div');
+  botMsg.className = 'ask-msg bot';
+  botMsg.textContent = answers[key] || "I don't have a predefined answer for that yet.";
+  askBody.appendChild(botMsg);
+  askBody.scrollTop = askBody.scrollHeight;
+});
+</script>
 </body>
     </html>
